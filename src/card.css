@@ -1,0 +1,8 @@
+
+.card {
+    display: flex;
+    max-width: 350px;
+}
+.cardimg {
+    height: 350px;
+}
