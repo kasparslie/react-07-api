@@ -10,15 +10,24 @@ class App extends Component {
     clever :[]
     }
   }
-  componentDidMount() {
+  getQuote =() =>{
     axios.get('https://simpsons-quotes-api.herokuapp.com/quotes')
     .then(resp => this.setState({clever:resp.data}))
+  }
+
+  componentDidMount() {
+    this.getQuote()
+  }
+
+  handleSubmit = (event) =>{
+    event.preventDefault()
+    this.getQuote()
   }
   render() {
     console.log(this.state.clever)
     return (
       <>
-      {this.state.clever.map(e => <SimCard {...e}/>)}
+      {this.state.clever.map(e => <SimCard key={e.character} {...e}/>)}
       </>
     )
   }

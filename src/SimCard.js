@@ -17,6 +17,9 @@ class SimCard extends Component {
                 <CardTitle>{this.props.character}</CardTitle>
                 <CardSubtitle></CardSubtitle>
                 <CardText>{this.props.quote}</CardText>
+                <form style={{display: 'flex', justifyContent :'center'}} onSubmit={this.handleSubmit} >
+                <button>Refresh Quote</button>
+                </form>
               </CardBody>
             </Card>
           </div>
